@@ -3,22 +3,22 @@ const bodyParser=require("body-parser");
 
 
 const app=express();
-var newItems=[]
+const newItems=[]
 var minus=""
 
 app.set("view engine","ejs")
 app.use(bodyParser.urlencoded({expended:true}))
 app.use(express.static("public"))
 
-var today=new Date();
-var options={
+const today=new Date();
+const options={
     weekday:"long",
     day:"numeric",
     month:"long"
 }
 var day= today.toLocaleDateString("en-US",options)
 
-console.log(today.getDay())
+
 app.get("/",function(req,res){
 
  
